@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cote Maree - Graphic Studio</title>
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            color: #333333;
+            background-color: #f3f0e6; /* Soft ivory background */
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background-color: #f3f0e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 60px;
+            border-bottom: 2px solid #d1c0a1; /* Soft gold accent */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: #d1c0a1; /* Soft gold color for Monaco vibes */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 40px;
+        }
+
+        nav ul li {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        nav ul li a {
+            color: #333;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #d1c0a1; /* Gold hover effect */
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: url('path/to/hero-image.jpg') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 0 30px;
+            background-size: cover;
+        }
+
+        #hero h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #d1c0a1; /* Soft gold for luxury feeling */
+        }
+
+        #hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            color: #f3f0e6;
+            margin-top: 20px;
+        }
+
+        /* About Section */
+        #about {
+            padding: 100px 60px;
+            text-align: center;
+            background-color: #f3f0e6;
+        }
+
+        #about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            color: #666;
+        }
+
+        #about img {
+            width: 100%;
+            max-width: 600px;
+            margin-top: 20px;
+            border-radius: 12px;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        #about img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Divider Line */
+        .divider-line {
+            width: 80%;
+            height: 2px;
+            background-color: #d1c0a1; /* Soft gold for sophistication */
+            margin: 50px auto;
+        }
+
+        /* Services Section */
+        #services {
+            padding: 120px 60px;
+            background-color: #f9f4e5;
+            text-align: center;
+        }
+
+        #services h2 {
+            font-size: 3rem;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .service-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card .card {
+            background-color: #ffffff;
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            width: 270px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #d1c0a1; /* Gold border for elegance */
+        }
+
+        .service-card .card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #333333;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 100px 60px;
+            text-align: center;
+            background-color: #f3f0e6;
+        }
+
+        #contact h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        #contact p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333333;
+            color: #f3f0e6;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        footer .social-links a {
+            color: #f3f0e6;
+            margin: 0 12px;
+            font-size: 1.3rem;
+        }
+
+        footer .social-links a:hover {
+            color: #d1c0a1; /* Soft gold hover effect */
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@400;700&family=Cormorant+Garamond:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Cote Maree</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to Cote Maree</h2>
+        <p>Designing the elegance of the French Riviera into every visual experience we create.</p>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Inspired by the tranquil beauty of the Mediterranean coast, Cote Maree brings an air of sophistication to every project. We specialize in creating timeless, luxurious brands for clients who demand elegance and distinction.</p>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <div class="service-card">
+            <div class="card">
+                <h3>Branding & Identity</h3>
+                <p>Complete brand creation from logos to visual systems that resonate with your audience.</p>
+            </div>
+            <div class="card">
+                <h3>Social Media Strategy</h3>
+                <p>Design and content strategies to make your online presence as stunning as your brand.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Designs</h3>
+                <p>Unique graphics, digital invitations, and tailored designs to meet every creative need.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider Line -->
+    <div class="divider-line"></div>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: <a href
